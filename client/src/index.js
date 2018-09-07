@@ -2,7 +2,13 @@ import dva from 'dva';
 import './index.css';
 import 'antd/dist/antd.css';
 // 1. Initialize
-const app = dva();
+const app = dva({
+    initialState:{
+        estateData:{
+            estateList:[]
+        }
+    }
+});
 
 // 2. Plugins
 // app.use({});
@@ -10,6 +16,7 @@ const app = dva();
 // 3. Model
 app.model(require('./models/example').default);
 app.model(require('./models/profile').default);
+app.model(require('./models/estateData').default);
 // 4. Router
 app.router(require('./router').default);
 

@@ -1,0 +1,8 @@
+.base{
+    width: 100vw;
+  }
+  .navigation{
+    width: 100vw;
+    height: 40px;
+    background-image: linear-gradient(to right, #ffbc3b 0%,#ffa632 100%);
+  }
