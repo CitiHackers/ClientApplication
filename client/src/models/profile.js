@@ -9,7 +9,8 @@ export default {
         monthlyExpense: 0,
         cpfSavings:0,
         housingGrants:0,
-        currentAge:0
+        currentAge:0,
+        selectedLocation:{}
     },
   
     subscriptions: {

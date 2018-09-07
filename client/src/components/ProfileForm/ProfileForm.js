@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "dva";
 import styles from "./ProfileForm.css";
-import { Row, Col, Input, Icon, Tooltip } from "antd";
+import { Row, Col, Input, Icon, Tooltip, Select } from "antd";
+const Option = Select.Option;
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,8 @@ class ProfileForm extends React.Component {
       monthlyExpense: 0,
       cpfSavings:0,
       housingGrants:0,
-      currentAge:0
+      currentAge:0,
+      selectedLocation:{}
     };
   }
   componentDidMount() {}
@@ -182,6 +184,39 @@ class ProfileForm extends React.Component {
             </Col>
           </Row>
         </div>
+        <div className={styles.form__item}>
+          <Row type="flex" justify="center">
+            <Col span={4}>
+              <div className={styles.input__caption}>Preferred Location</div>
+            </Col>
+            <Col span={1}>
+            </Col>
+            <Col span={8}>
+            <Select
+              showSearch
+              style={{ width: 230 }}
+              placeholder="Select a location"
+              onChange={(value)=>{
+                // console.log(value)
+                this.setState({
+                  selectedLocation: JSON.parse(value)
+                })
+              }}
+            >
+              <Option value={JSON.stringify({lat:1.3150696,lng:103.7652462})}>Clementi</Option>
+              <Option value={JSON.stringify({lat:1.3403898,lng:103.7089875})}>Jurong West</Option>
+              <Option value={JSON.stringify({lat:1.3490142,lng:103.8390947})}>Marymount</Option>
+              <Option value={JSON.stringify({lat:1.4381922,lng:103.7889597})}>Woodlands</Option>
+              <Option value={JSON.stringify({lat:1.3200544,lng:103.8917746})}>Geylang</Option>
+              <Option value={JSON.stringify({lat:1.3343035,lng:103.8563265})}>Toa Payoh</Option>
+              <Option value={JSON.stringify({lat:1.3774142,lng:103.7719498})}>Bukit Panjang</Option>
+              <Option value={JSON.stringify({lat:1.3495907,lng:103.9567879})}>Tampines</Option>
+              <Option value={JSON.stringify({lat:1.3612182,lng:103.8862529})}>Hougang</Option>
+              <Option value={JSON.stringify({lat:1.3984457,lng:103.9072046})}>Punggol</Option>
+            </Select>
+            </Col>
+          </Row>
+        </div>
         <div className={styles.submit__button} onClick={()=>{
             this.props.dispatch({
                 type:"profile/save",
@@ -191,7 +226,8 @@ class ProfileForm extends React.Component {
                     monthlyExpense: this.state.monthlyExpense,
                     cpfSavings:this.state.cpfSavings,
                     housingGrants:this.state.housingGrants,
-                    currentAge:this.state.currentAge
+                    currentAge:this.state.currentAge,
+                    selectedLocation:this.state.selectedLocation
                 }
             })
             this.props.dispatch({
