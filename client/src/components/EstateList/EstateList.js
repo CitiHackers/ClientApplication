@@ -6,6 +6,10 @@ const listData = [];
 for (let i = 0; i < 5; i++) {
   listData.push({
     starred: false,
+    price:533110,
+    type:'CONDO',
+    rent:2100,
+    size: '100 sqft',
     href: "http://ant.design",
     title: `ant design part ${i}`,
     house_id: Math.random(),
@@ -43,28 +47,28 @@ class EstateList extends React.Component {
         <IconText
           type="star-o"
           theme="filled"
-          text="156"
+          text="Favorited"
           onClick={()=>this.removeItem(item)}
         />,
         <IconText
-          type="like-o"
-          text="156"
+          type="dollar"
+          text={item.price>1000000?(item.price/1000000).toFixed(1)+'mil':(item.price/1000).toFixed(1)+'k'}
         />,
-        <IconText type="message" text="2" />
+        <IconText type="home" text={`${item.type}   ${item.size}`} />,
       ])
     }
     else{
       return([
         <IconText
           type="star-o"
-          text="156"
+          text="Favorite"
           onClick={()=>this.addItem(item)}
         />,
         <IconText
-          type="like-o"
-          text="156"
+          type="dollar"
+          text={item.price>1000000?(item.price/1000000).toFixed(1)+'mil':(item.price/1000).toFixed(1)+'k'}
         />,
-        <IconText type="message" text="2" />
+        <IconText type="home" text={`${item.type}, ${item.size}`} />
       ])
     }
   }
