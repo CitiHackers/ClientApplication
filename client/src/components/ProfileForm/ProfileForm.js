@@ -219,7 +219,7 @@ class ProfileForm extends React.Component {
         </div>
         <div className={styles.submit__button} onClick={()=>{
             this.props.dispatch({
-                type:"profile/save",
+                type:"profile/postData",
                 payload:{
                     annualIncome: this.state.annualIncome,
                     personalSavings: this.state.personalSavings,
@@ -230,9 +230,9 @@ class ProfileForm extends React.Component {
                     selectedLocation:this.state.selectedLocation
                 }
             })
-            this.props.dispatch({
-                type:"profile/postData"
-            })
+            // this.props.dispatch({
+            //     type:"profile/postData"
+            // })
         }}>
         Submit
         </div>

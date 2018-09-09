@@ -23,24 +23,20 @@ export default {
       // eslint-disable-line
       yield put({ type: "save" });
     },
-    *postData(state, { payload }, { call, put }) {
-      yield call(
-        request("/profile", {
-          method: "POST",
-          body: JSON.stringify(state)
-        })
-      );
-      yield put({ type: "test" });
+    *postData({payload }, { call, put }) {
+      yield put({type:"save", payload:payload})
+      console.log(payload)
+      yield request("/api/profile", {
+        method: "POST",
+        body: JSON.stringify(payload)
+      })
     }
   },
+
 
   reducers: {
     save(state, action) {
       return { ...state, ...action.payload };
-    },
-    test(state) {
-      console.log(JSON.stringify(state));
-      return state;
     }
   }
 };

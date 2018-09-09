@@ -24,6 +24,12 @@ the application is built using [dva](https://github.com/dvajs/dva) framework, de
     >entry point of the application
 ## Set up instructions
 ``` bash
+# install dva framework
+npm install dva-cli -g
+
+# check dva installation
+dva -v
+> dva-cli version 0.9.2
 
 # install dependencies
 npm install
