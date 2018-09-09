@@ -1,0 +1,15 @@
+.base{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+.side_box{
+    position: relative;
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+.instruction{
+    padding-top: 10px;
+    font: 1.5em sans-serif;
+}
