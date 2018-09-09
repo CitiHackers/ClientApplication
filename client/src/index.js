@@ -5,7 +5,8 @@ import 'antd/dist/antd.css';
 const app = dva({
     initialState:{
         estateData:{
-            estateList:[]
+            estateList:[],
+            selectedEstates:[]
         }
     }
 });

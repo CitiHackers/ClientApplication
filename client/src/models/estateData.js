@@ -4,7 +4,8 @@ export default {
     namespace: 'estateData',
   
     state: {
-      estateList:[]
+      estateList:[],//list of estates pulled from server
+      selectedEstates:[],//estates selected by user for comparison
     },
   
     subscriptions: {
@@ -22,9 +23,18 @@ export default {
       save(state, action) {
         return { ...state, ...action.payload };
       },
-      test(state){
-        console.log('called')
-        return state;
+      addEstate(state,{payload:estate}){
+        return {...state, ...state.selectedEstates.push(estate.item)}
+      },
+      removeEstate(state,{payload:estate}){
+        const index = state.selectedEstates.indexOf(estate)
+        return {...state, ...state.selectedEstates.splice(index, 1)}
+      },
+      clearList(state){
+        return{...state, estateList:[]}
+      },
+      clearSelection(state){
+        return{...state, selectedEstates:[]}
       }
     },
   
