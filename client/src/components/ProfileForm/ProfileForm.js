@@ -28,7 +28,7 @@ class ProfileForm extends React.Component {
         </div>
         <div className={styles.form__item}>
           <Row type="flex" justify="center">
-            <Col span={4}>
+            <Col span={6}>
               <div className={styles.input__caption}>Annual Income</div>
             </Col>
             <Col span={1} />
@@ -49,7 +49,7 @@ class ProfileForm extends React.Component {
         </div>
         <div className={styles.form__item}>
           <Row type="flex" justify="center">
-            <Col span={4}>
+            <Col span={6}>
               <div className={styles.input__caption}>Personal Savings</div>
             </Col>
             <Col span={1}>
@@ -78,7 +78,7 @@ class ProfileForm extends React.Component {
         </div>
         <div className={styles.form__item}>
           <Row type="flex" justify="center">
-            <Col span={4}>
+            <Col span={6}>
               <div className={styles.input__caption}>Monthly Expense</div>
             </Col>
             <Col span={1}>
@@ -107,7 +107,7 @@ class ProfileForm extends React.Component {
         </div>
         <div className={styles.form__item}>
           <Row type="flex" justify="center">
-            <Col span={4}>
+            <Col span={6}>
               <div className={styles.input__caption}>CPF Savings</div>
             </Col>
             <Col span={1}>
@@ -136,7 +136,7 @@ class ProfileForm extends React.Component {
         </div>
         <div className={styles.form__item}>
           <Row type="flex" justify="center">
-            <Col span={4}>
+            <Col span={6}>
               <div className={styles.input__caption}>Housing Grants</div>
             </Col>
             <Col span={1}>
@@ -165,7 +165,7 @@ class ProfileForm extends React.Component {
         </div>
         <div className={styles.form__item}>
           <Row type="flex" justify="center">
-            <Col span={4}>
+            <Col span={6}>
               <div className={styles.input__caption}>Current Age</div>
             </Col>
             <Col span={1}>
@@ -186,7 +186,7 @@ class ProfileForm extends React.Component {
         </div>
         <div className={styles.form__item}>
           <Row type="flex" justify="center">
-            <Col span={4}>
+            <Col span={6}>
               <div className={styles.input__caption}>Preferred Location</div>
             </Col>
             <Col span={1}>
